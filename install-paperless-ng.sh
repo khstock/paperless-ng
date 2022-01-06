@@ -28,7 +28,7 @@ ask_docker_folder() {
 
 		if [[ -z $result ]]; then
 			ask_result=$2
-			returnkhstock
+			return
 		fi
 
 		if [[ $result == /* || $result == ./* ]]; then
