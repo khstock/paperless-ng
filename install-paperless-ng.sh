@@ -28,7 +28,7 @@ ask_docker_folder() {
 
 		if [[ -z $result ]]; then
 			ask_result=$2
-			return
+			returnkhstock
 		fi
 
 		if [[ $result == /* || $result == ./* ]]; then
@@ -277,8 +277,8 @@ if [[ $TIKA_ENABLED == "yes" ]] ; then
 	DOCKER_COMPOSE_VERSION="$DOCKER_COMPOSE_VERSION-tika"
 fi
 
-wget "https://raw.githubusercontent.com/jonaswinkler/paperless-ng/master/docker/compose/docker-compose.$DOCKER_COMPOSE_VERSION.yml" -O docker-compose.yml
-wget "https://raw.githubusercontent.com/jonaswinkler/paperless-ng/master/docker/compose/.env" -O .env
+wget "https://raw.githubusercontent.com/khstock/paperless-ng/master/docker/compose/docker-compose.$DOCKER_COMPOSE_VERSION.yml" -O docker-compose.yml
+wget "https://raw.githubusercontent.com/khstock/paperless-ng/master/docker/compose/.env" -O .env
 
 SECRET_KEY=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)
 
